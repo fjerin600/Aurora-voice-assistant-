@@ -2,6 +2,13 @@ import sys, threading, webbrowser, requests, numpy as np
 from PyQt6.QtWidgets import QApplication, QWidget, QLabel, QPushButton, QVBoxLayout
 from PyQt6.QtGui import QMovie, QPainter, QColor, QPen
 from PyQt6.QtCore import Qt, QTimer
+from PyQt6.QtGui import QPixmap
+
+self.mic_label = QLabel(self)
+pixmap = QPixmap("assets/mic_pulse.jpg")  # Use .jpg instead of .png
+self.mic_label.setPixmap(pixmap)
+self.layout.addWidget(self.mic_label, alignment=Qt.AlignmentFlag.AlignCenter)
+
 import speech_recognition as sr
 import pyttsx3
 import json
