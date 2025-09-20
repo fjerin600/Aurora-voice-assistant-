@@ -1,0 +1,10 @@
+PyQt6
+speechrecognition
+pyttsx3
+requests
+numpy
+pyaudio
+
+On Windows, install with: 
+pip install pipwin
+pipwin install pyaudio
