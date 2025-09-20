@@ -3,7 +3,7 @@
 [![Python](https://img.shields.io/badge/Python-3.10+-blue)](https://www.python.org/) 
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE) 
 
-**Aurora Voice Assistant** is a Python desktop application with voice recognition, text-to-speech, and animated GUI elements. It handles smart commands like weather updates, news headlines, jokes, and opening websites/apps, making it a professional portfolio project showcasing Python GUI development, API integration, and interactive visuals.
+**Aurora Voice Assistant** is a Python desktop application with voice recognition, text-to-speech, and animated GUI elements. It handles smart commands such as weather updates, news headlines, jokes, and opening websites/apps, making it a professional portfolio project that showcases Python GUI development, API integration, and interactive visuals.
 
 ---
 
@@ -22,10 +22,11 @@
 ---
 
 ## 🖼️ Screenshots
-![Mic Animation]([screenshots/mic_pulse.gif](https://pin.it/2ZmuMohZj))
-![Waveform Animation]([screenshots/waveform.png](https://pin.it/vZ1FMa3CQ))
+![Mic Animation](![mic_pulse png](https://github.com/user-attachments/assets/dddc0903-a73e-4f4f-b4bd-8fd1a45aaf67)
+)
+![Waveform Animation](![waveform png](https://github.com/user-attachments/assets/c90e7b78-4525-4f25-bc5c-73e5842c0601)
+)
 
-*Replace these placeholders with your own screenshots or GIFs.*
 
 ---
 
