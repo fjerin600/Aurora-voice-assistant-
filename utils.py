@@ -1,34 +1,28 @@
 import requests
-import os
-import json
 
-# Load API keys from settings.json if it exists
-API_KEYS = {"weather_api_key": "", "news_api_key": ""}
-if os.path.exists("settings.json"):
-    with open("settings.json") as f:
-        API_KEYS.update(json.load(f))
-
+# Weather using Open-Meteo (no API key required)
 def get_weather(city: str):
-    key = API_KEYS.get("weather_api_key")
-    if not key:
-        return "Weather API key not set in settings.json."
-    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={key}&units=metric"
+    locations = {
+        "New York": [40.7128, -74.0060],
+        "London": [51.5074, -0.1278],
+        "Paris": [48.8566, 2.3522],
+        "Tokyo": [35.6762, 139.6503]
+    }
+    lat, lon = locations.get(city, [40.7128, -74.0060])
+    url = f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&current_weather=true"
     try:
         data = requests.get(url).json()
-        temp = data['main']['temp']
-        desc = data['weather'][0]['description']
-        return f"The temperature in {city} is {temp}°C with {desc}."
+        temp = data['current_weather']['temperature']
+        wind = data['current_weather']['windspeed']
+        return f"The current temperature in {city} is {temp}°C with wind speed {wind} km/h."
     except:
         return "Sorry, I couldn't fetch the weather."
 
+# Placeholder news function
 def get_news():
-    key = API_KEYS.get("news_api_key")
-    if not key:
-        return "News API key not set in settings.json."
-    url = f"https://newsapi.org/v2/top-headlines?country=us&apiKey={key}"
-    try:
-        data = requests.get(url).json()
-        headlines = [article['title'] for article in data['articles'][:5]]
-        return "Here are the top news headlines:\n" + "\n".join(headlines)
-    except:
-        return "Sorry, I couldn't fetch the news."
+    headlines = [
+        "News headlines are not available right now.",
+        "You can integrate NewsAPI.org or Mediastack later."
+    ]
+    return "\n".join(headlines)
+
